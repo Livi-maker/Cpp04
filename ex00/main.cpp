@@ -34,5 +34,6 @@ int main()
 
 	delete(meta);
 	delete(i);
+	delete(j);
 	return 0;
 }
