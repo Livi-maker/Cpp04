@@ -1,10 +1,12 @@
 #ifndef ICHARACTER_HPP
 # define ICHARACTER_HPP
 
+
+
 #include <iostream>
 #include "AMateria.hpp"
-#include "Ice.hpp"
-#include "Cure.hpp"
+
+class AMateria;
 
 class ICharacter
 {

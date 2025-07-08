@@ -1,8 +1,11 @@
 #ifndef AMATERIA_HPP
 #define AMATERIA_HPP
 
+
 #include <iostream>
 #include "ICharacter.hpp"
+
+class ICharacter;
 
 class	AMateria
 {
@@ -21,5 +24,6 @@ class	AMateria
 	protected:
 		std::string _type;
 };
+
 
 #endif
