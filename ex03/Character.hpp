@@ -3,13 +3,18 @@
 
 
 #include <iostream>
+#include "Ice.hpp"
+#include "Cure.hpp"
 #include "AMateria.hpp"
+#include "ICharacter.hpp"
 
-class Character : virtual ICharacter
+class ICharacter;
+
+class Character : public ICharacter
 {
 	public:
 		Character(void);
-		Character(std::string name);
+		Character(const std::string &name);
 		Character(Character const& old);
 		Character& operator = (Character const& old);
 		~Character(void);
@@ -18,7 +23,10 @@ class Character : virtual ICharacter
 		void equip(AMateria* m);
 		void unequip(int idx);
 		void use(int idx, ICharacter& target);
+
+	private:
+		std::string _name;
+		 AMateria*	_slot[4];
 };
 
-#include "ICharacter.hpp"
 #endif

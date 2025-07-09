@@ -1,6 +1,7 @@
 #ifndef IMATERIASOURCESOURCE_HPP
 
-#include "AMateria.hpp"
+#include "Ice.hpp"
+#include "Cure.hpp"
 #include <iostream>
 
 class IMateriaSource
@@ -9,9 +10,6 @@ class IMateriaSource
 		virtual ~IMateriaSource() {}
 		virtual void learnMateria(AMateria*) = 0;
 		virtual AMateria* createMateria(std::string const & type) = 0;
-
-	protected:
-		AMateria* inventary[4];
 };
 
 #endif

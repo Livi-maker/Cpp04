@@ -30,7 +30,7 @@ Ice* Ice::clone() const
 	return (newIce);
 }
 
-void Ice::use(ICharacter& target)
+void Ice::use(ICharacter& target) const
 {
-	std::cout << "* shoots an ice bolt at " << target.getName() << std::endl;
+	std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
 }

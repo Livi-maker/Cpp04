@@ -1,11 +1,8 @@
 #ifndef ICE_HPP
 # define ICE_HPP
 
-
-
 # include <iostream>
 # include "AMateria.hpp"
-
 
 class Ice : public AMateria
 {
@@ -17,7 +14,7 @@ class Ice : public AMateria
 		~Ice(void);
 
 		Ice* clone() const;
-		void use(ICharacter& target);
+		void use(ICharacter& target) const;
 };
 
 #endif
