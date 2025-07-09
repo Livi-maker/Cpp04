@@ -24,3 +24,8 @@ Brain::~Brain(void)
 {
 	std::cout << "Brain destructor called" << std::endl;
 }
+
+std::string Brain::getIdea(int i) const
+{
+	return (ideas[i]);
+}
