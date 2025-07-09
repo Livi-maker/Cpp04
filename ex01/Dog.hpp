@@ -16,7 +16,7 @@ class Dog : virtual public Animal
 		void	makeSound(void) const;
 
 	private:
-		Brain* _idea;
+		Brain* _brain;
 };
 
 #endif

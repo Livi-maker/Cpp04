@@ -5,7 +5,7 @@
 Dog::Dog(void) : Animal()
 {
 	type = "Dog";
-	_idea = new Brain();
+	_brain = new Brain();
 	std::cout << "It's a " << this->type << "!" << std::endl;
 }
 
@@ -18,6 +18,7 @@ Dog::Dog(const Dog& old) : Animal(old)
 Dog& Dog::operator = (const Dog& old)
 {
 	this->type = old.type;
+	_brain = old._brain;
 	std::cout << "copy assignment operator called" << std::endl;
 	return (*this);
 }
@@ -25,7 +26,7 @@ Dog& Dog::operator = (const Dog& old)
 Dog::~Dog(void)
 {
 	std::cout << "The dog is running away.." << std::endl;
-	delete(_idea);
+	delete(_brain);
 }
 
 void	Dog::makeSound(void) const
