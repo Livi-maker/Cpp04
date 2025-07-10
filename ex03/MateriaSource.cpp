@@ -10,6 +10,8 @@ MateriaSource::MateriaSource(void)
 
 MateriaSource::MateriaSource(const MateriaSource& old) : IMateriaSource(old)
 {
+	for (int i = 0; i < 4; i++)
+		inventary[i] = 0;
 	*this = old;
 }
 

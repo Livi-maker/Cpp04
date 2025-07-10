@@ -11,6 +11,7 @@ Dog::Dog(void) : Animal()
 
 Dog::Dog(const Dog& old) : Animal(old)
 {
+	_brain = 0;
 	*this = old;
 	std::cout << "Two identical dogs!" << std::endl;
 }
@@ -18,7 +19,9 @@ Dog::Dog(const Dog& old) : Animal(old)
 Dog& Dog::operator = (const Dog& old)
 {
 	this->type = old.type;
-	_brain = old._brain;
+	if (!_brain)
+		_brain = new Brain();
+	*_brain = *(old._brain);
 	std::cout << "copy assignment operator called" << std::endl;
 	return (*this);
 }
@@ -32,4 +35,9 @@ Dog::~Dog(void)
 void	Dog::makeSound(void) const
 {
 	std::cout << "Wuff" << std::endl;
+}
+
+Brain*	Dog::getAdress(void) const
+{
+	return (this->_brain);
 }

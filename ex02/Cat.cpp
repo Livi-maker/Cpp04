@@ -11,6 +11,7 @@ Cat::Cat(void) : Animal()
 
 Cat::Cat(const Cat& old) : Animal(old)
 {
+	_brain = 0;
 	*this = old;
 	std::cout << "Two identical cats!" << std::endl;
 }
@@ -18,7 +19,9 @@ Cat::Cat(const Cat& old) : Animal(old)
 Cat& Cat::operator = (const Cat& old)
 {
 	this->type = old.type;
-	_brain = old._brain;
+	if (!_brain)
+		_brain = new Brain();
+	*_brain = *(old._brain);
 	std::cout << "copy assignment operator called" << std::endl;
 	return (*this);
 }

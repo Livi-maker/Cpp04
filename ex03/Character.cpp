@@ -16,6 +16,8 @@ Character::Character(std::string const &name) : _name(name)
 
 Character::Character(Character const& old)
 {
+	for (int i = 0; i < 4; i++)
+		_slot[i] = 0;
 	*this = old;
 }
 

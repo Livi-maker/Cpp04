@@ -5,8 +5,8 @@
 
 int main()
 {
-	int		i;
-	Animal*	array[6];
+	int i;
+	Animal* array[6];
 
 	for (i = 0; i < 6; i++)
 	{
@@ -17,5 +17,7 @@ int main()
 	}
 	for (i = 0; i < 6; i ++)
 		delete (array[i]);
+	//Animal* a = new Animal();
+	//Animal b;
 	return 0;
 }
