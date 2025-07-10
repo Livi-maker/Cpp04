@@ -44,9 +44,11 @@ void MateriaSource::learnMateria(AMateria* to_copy)
 		{
 			inventary[i] = to_copy->clone();
 			delete(to_copy);
-			break ;
+			return ;
 		}
 	}
+	if (to_copy)
+		delete to_copy;
 }
 
 AMateria* MateriaSource::createMateria(std::string const& type)

@@ -15,7 +15,6 @@ int main()
 
   ICharacter* me = new Character("me");
 
-
   AMateria* tmp;
   tmp = src->createMateria("ice"); // Materias are not being found --> to fix
   me->equip(tmp);
