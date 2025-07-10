@@ -6,20 +6,17 @@ Character::Character(void)
 
 	for (i = 0; i < 4; i++)
 		_slot[i] = 0;
-	std::cout << "Character default costructor called" << std::endl;
 }
 
 Character::Character(std::string const &name) : _name(name)
 {
 	for (int i = 0; i < 4; i++)
 		_slot[i] = 0;
-	std::cout << "Character costructor called" << std::endl;
 }
 
 Character::Character(Character const& old)
 {
 	*this = old;
-	std::cout << "Character copy costructor called" << std::endl;
 }
 
 Character& Character::operator = (Character const& old)
@@ -37,7 +34,6 @@ Character& Character::operator = (Character const& old)
 	}
 
 	this->_name = old._name;
-	std::cout << "Character copy operator called" << std::endl;
 	return (*this);
 }
 
@@ -48,7 +44,6 @@ Character::~Character(void)
 	for (i = 0; i < 4; i++)
 		if (_slot[i])
 			delete (_slot[i]);
-	std::cout << "Character destructor called" << std::endl;
 }
 
 std::string const& Character::getName() const
@@ -60,6 +55,8 @@ void Character::equip(AMateria* m)
 {
 	int	i;
 
+	if (!m)
+		return ;
 	for (i = 0; i < 4; i++)
 	{
 		if (!_slot[i])
@@ -80,4 +77,9 @@ void Character::use(int idx, ICharacter& target)
 {
 	if (idx < 4 && _slot[idx])
 		_slot[idx]->use(target);
+}
+
+AMateria*	Character::get_adress(int idx) const
+{
+	return ((this->_slot[idx]));
 }
